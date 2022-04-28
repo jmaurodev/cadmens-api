@@ -46,3 +46,12 @@ class NicknameSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'id',
         )
+
+
+class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.Organization
+        fields = (
+            'name',
+            'id',
+        )

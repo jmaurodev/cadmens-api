@@ -43,3 +43,12 @@ class NicknameViewSet(BaseModelViewSet):
 
     queryset = models.Nickname.objects.all()
     serializer_class = serializers.NicknameSerializer
+
+
+class OrganizationViewSet(BaseModelViewSet):
+    """
+    Allow organizations to be managed.
+    """
+
+    queryset = models.Organization.objects.all()
+    serializer_class = serializers.OrganizationSerializer
