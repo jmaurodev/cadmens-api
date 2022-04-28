@@ -39,3 +39,21 @@ source venv/bin/activate
 ```bash
 python manage.py runserver
 ```
+
+## Contribuição
+
+"Now is better than never." (Tim Peters)
+
+Toda contribuição será bem vinda, desde que:
+
+* Pertinente aos objetivos do projeto;
+* Esteja em conformidade com o estilo de código; e
+* Tenha sido aprovado pelo script de pre-commit.
+
+[PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+
+[PEP 20 – The Zen of Python](https://peps.python.org/pep-0020/)
+
+[PEP 257 – Docstring Conventions](https://peps.python.org/pep-0257/)
+
+[PEP 484 – Type Hints](https://peps.python.org/pep-0484/)
