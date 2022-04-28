@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from rest_framework import viewsets
 from rest_framework import permissions
-from app.models import Message, Network
-from app.serializers import MessageSerializer, NetworkSerializer
+from app import models
+from app import serializers
 
 
 class BaseModelViewSet(viewsets.ModelViewSet):
@@ -14,8 +14,8 @@ class MessageViewSet(BaseModelViewSet):
     Allows messages to be managed.
     """
 
-    queryset = Message.objects.all()
-    serializer_class = MessageSerializer
+    queryset = models.Message.objects.all()
+    serializer_class = serializers.MessageSerializer
 
 
 class NetworkViewSet(BaseModelViewSet):
@@ -23,5 +23,14 @@ class NetworkViewSet(BaseModelViewSet):
     Allow networks to be managed.
     """
 
-    queryset = Network.objects.all()
-    serializer_class = NetworkSerializer
+    queryset = models.Network.objects.all()
+    serializer_class = serializers.NetworkSerializer
+
+
+class EnvironmentViewSet(BaseModelViewSet):
+    """
+    Allow environments to be managed.
+    """
+
+    queryset = models.Environment.objects.all()
+    serializer_class = serializers.EnvironmentSerializer

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from rest_framework import serializers
-from app.models import Message, Network
+from app import models
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Message
+        model = models.Message
         fields = (
             'content',
             'encryption',
@@ -23,7 +23,16 @@ class MessageSerializer(serializers.HyperlinkedModelSerializer):
 
 class NetworkSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Network
+        model = models.Network
+        fields = (
+            'name',
+            'id',
+        )
+
+
+class EnvironmentSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.Network
         fields = (
             'name',
             'id',

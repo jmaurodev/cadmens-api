@@ -22,6 +22,7 @@ from app import views
 router = routers.DefaultRouter()
 router.register(r'messages', views.MessageViewSet)
 router.register(r'networks', views.NetworkViewSet)
+router.register(r'environments', views.EnvironmentViewSet)
 
 
 urlpatterns = [
