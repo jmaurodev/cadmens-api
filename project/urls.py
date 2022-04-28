@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -24,5 +25,5 @@ router.register(r'messages', views.MessageViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
 ]

@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 from django.db import models
-from django.urls import reverse
 
 
 class Message(models.Model):
@@ -34,41 +34,21 @@ class Message(models.Model):
 
     content = models.CharField(max_length=100)
     encryption = models.BooleanField(choices=ENCRYPTION)
-    network = models.CharField(
-        max_length=1,
-        choices=NETWORK
-    )
-    environment = models.CharField(
-        max_length=1,
-        choices=ENVIRONMENT
-    )
-    precedence = models.CharField(
-        max_length=1,
-        choices=PRECEDENCE
-    )
-    confidentiality = models.CharField(
-        max_length=1,
-        choices=CONFIDENTIALITY
-    )
+    network = models.CharField(max_length=1, choices=NETWORK)
+    environment = models.CharField(max_length=1, choices=ENVIRONMENT)
+    precedence = models.CharField(max_length=1, choices=PRECEDENCE)
+    confidentiality = models.CharField(max_length=1, choices=CONFIDENTIALITY)
     sender_nickname = models.ForeignKey(
-        'Nickname',
-        on_delete=models.PROTECT,
-        related_name='+'
+        'Nickname', on_delete=models.PROTECT, related_name='+'
     )
     receiver_nickname = models.ForeignKey(
-        'Nickname',
-        on_delete=models.PROTECT,
-        related_name='+'
+        'Nickname', on_delete=models.PROTECT, related_name='+'
     )
     sender_organization = models.ForeignKey(
-        'Organization',
-        on_delete=models.PROTECT,
-        related_name='+'
+        'Organization', on_delete=models.PROTECT, related_name='+'
     )
     receiver_organization = models.ForeignKey(
-        'Organization',
-        on_delete=models.PROTECT,
-        related_name='+'
+        'Organization', on_delete=models.PROTECT, related_name='+'
     )
 
     def __str__(self):
@@ -79,36 +59,28 @@ class Message(models.Model):
 
 
 class Network(models.Model):
-    name = models.CharField(
-        max_length=30
-    )
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
 
 
 class Environment(models.Model):
-    name = models.CharField(
-        max_length=30
-    )
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
 
 
 class Nickname(models.Model):
-    name = models.CharField(
-        max_length=30
-    )
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
 
 
 class Organization(models.Model):
-    name = models.CharField(
-        max_length=30
-    )
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
