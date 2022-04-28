@@ -5,21 +5,23 @@ from app.models import Message, Network
 from app.serializers import MessageSerializer, NetworkSerializer
 
 
-class MessageViewSet(viewsets.ModelViewSet):
+class BaseModelViewSet(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class MessageViewSet(BaseModelViewSet):
     """
     Allows messages to be managed.
     """
 
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
-class NetworkViewSet(viewsets.ModelViewSet):
+class NetworkViewSet(BaseModelViewSet):
     """
     Allow networks to be managed.
     """
 
     queryset = Network.objects.all()
     serializer_class = NetworkSerializer
-    permission_classes = [permissions.IsAuthenticated]
