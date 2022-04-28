@@ -37,3 +37,12 @@ class EnvironmentSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'id',
         )
+
+
+class NicknameSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.Nickname
+        fields = (
+            'name',
+            'id',
+        )

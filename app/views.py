@@ -34,3 +34,12 @@ class EnvironmentViewSet(BaseModelViewSet):
 
     queryset = models.Environment.objects.all()
     serializer_class = serializers.EnvironmentSerializer
+
+
+class NicknameViewSet(BaseModelViewSet):
+    """
+    Allow nicknames to be managed.
+    """
+
+    queryset = models.Nickname.objects.all()
+    serializer_class = serializers.NicknameSerializer

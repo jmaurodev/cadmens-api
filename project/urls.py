@@ -23,6 +23,7 @@ router = routers.DefaultRouter()
 router.register(r'messages', views.MessageViewSet)
 router.register(r'networks', views.NetworkViewSet)
 router.register(r'environments', views.EnvironmentViewSet)
+router.register(r'nicknames', views.NicknameViewSet)
 
 
 urlpatterns = [
