@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Django Manage
-manage.py
+# VS Code Configs
+.vscode/
