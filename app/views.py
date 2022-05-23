@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework import permissions
 from app import models
 from app import serializers
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class BaseModelViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [
+        DjangoFilterBackend,
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+    ordering_fields = ['name']
+    search_fields = ['name']
 
 
 class MessageViewSet(BaseModelViewSet):
@@ -16,6 +24,8 @@ class MessageViewSet(BaseModelViewSet):
 
     queryset = models.Message.objects.all()
     serializer_class = serializers.MessageSerializer
+    ordering_fields = '__all__'
+    search_fields = ['content']
 
 
 class NetworkViewSet(BaseModelViewSet):
